@@ -1,12 +1,16 @@
+import 'package:bytebank_2/database/app_database.dart';
 import 'package:bytebank_2/screens/contact_form.dart';
 import 'package:bytebank_2/screens/contacts_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'models/contact.dart';
 import 'screens/dashboard.dart';
 
 void main() {
   runApp(BytebankApp());
+  findAll().then((contacts) => debugPrint(contacts.toString()));
+
 }
 
 class BytebankApp extends StatelessWidget {
